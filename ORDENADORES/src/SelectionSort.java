@@ -1,26 +1,27 @@
 public class SelectionSort {
 
     public static void selectionSort (long[] array) {
+        int op = 0;
         int n = array.length;
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-              if (array[j] < array[minIndex]) {
+                op++;
+                if (array[j] < array[minIndex]) {
                   minIndex = j;
-              }
-          }
-        // Troca o elemento mínimo com o elemento atual
-         long temp = array[minIndex];
-            array[minIndex] = array[i];
-         array[i] = temp;
-     }
-    // Imprime o array ordenado
-     for (int i = 0; i < n; i++) {
-         System.out.print(array[i] + " ");
-     }
+                }
+            }
+        long temp = array[minIndex];
+        array[minIndex] = array[i];
+        array[i] = temp;
+        op += 3;
+        }
+        for (int i = 0; i < n; i++) {
+        System.out.print(array[i] + " ");
+        }
+        System.out.printf("\nQtd de operacoes: %d\n", op);
     }
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
 
         long array1[] = {2836, 9787, 658, 26532};
         long array2[] = {68653, 265808, 567657, 4737673, 9069327, 80, 932858};
