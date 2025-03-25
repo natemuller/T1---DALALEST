@@ -1,18 +1,22 @@
 public class InsertionSort {
 
     public static void insertionSort (long[] array) {
+        int op = 0;
         for (int i = 1; i < array.length; i++) {
             long key = array[i];
             int j = i - 1;
             while (j >= 0 && array[j] > key) {
                 array[j + 1] = array[j];
                 j--;
+                op++;
             }
             array[j + 1] = key;
+            op++;
         }
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.printf("\nQtd de operacoes: %d\n", op);
     }
     public static void main(String[] args) throws Exception {   
 
