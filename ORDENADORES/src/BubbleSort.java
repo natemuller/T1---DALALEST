@@ -1,13 +1,16 @@
 public class BubbleSort {
 
-    public static void bubbleSort (long[] array) {
+    public static int bubbleSort (long[] array) {
         int n = array.length;
+        int op = 0;
         for (int i = 0; i < n-1; i++) {
             for (int j = 0; j < n-i-1; j++) {
+                op++;
                 if (array[j] > array[j+1]) {
                     long temp = array[j];
                     array[j] = array[j+1];
                     array[j+1] = temp;
+                    op += 3;
                 }
             }
         }
@@ -16,6 +19,8 @@ public class BubbleSort {
             System.out.print(array[i] + " ");
         }
         System.out.println();
+        System.out.printf("Qtd de operacoes: %d\n", op);
+        return op;
     }
     public static void main(String[] args) throws Exception {
         
